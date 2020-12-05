@@ -48,7 +48,7 @@
         
     </div>
     <div class="text-right" v-if="showValidateButton">
-      <button @click="validate" id="validate-columns" class="btn btn-primary">{{ text[lang].submit }}</button>
+      <button @click="validate" id="validate-columns" class="btn btn-success vd-button">{{ text[lang].submit }}</button>
     </div>
     <simplert
       :useRadius="true"
