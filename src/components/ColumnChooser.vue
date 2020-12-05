@@ -1,10 +1,11 @@
 <template>
   <div class="catalog-column-chooser">
-    <a href="#" class="header-tool" @click="toggleHeaders">
-      {{ withHeaders ? text[lang].file.withoutHeaders : text[lang].file.withHeaders }}
-    </a>
-    <br><br>
-    <div v-for="(column, index) in localUserColumns">
+    <div class="toggle-columns-headers">
+      <a href="#" class="header-tool" @click="toggleHeaders">
+        {{ withHeaders ? text[lang].file.withoutHeaders : text[lang].file.withHeaders }}
+      </a>
+    </div>
+    <div class="local-columns-list" v-for="(column, index) in localUserColumns">
       <div class="local-columns-container">
         
           <div class="local-column-header-data" :class="{ 'vd-text-success': column.selection, 'vd-text-danger': !column.selection }">
