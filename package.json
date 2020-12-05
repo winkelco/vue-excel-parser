@@ -1,5 +1,5 @@
 {
-  "name": "vue-xls-csv-parser",
+  "name": "vue-excel-parser",
   "version": "0.0.21",
   "description": "VueJS Xls/CSV parser with ability to match required columns",
   "author": "Victor Boissiere <contact@gitcommit.fr>",
@@ -93,7 +93,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/victorboissiere/vue-xls-csv-parser"
+    "url": "https://github.com/winkelco/vue-excel-parser"
   },
   "licenses": [
     {
