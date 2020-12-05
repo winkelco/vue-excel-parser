@@ -5,14 +5,17 @@
     </a>
     <br><br>
     <div v-for="(column, index) in localUserColumns">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="panel panel-success" :class="{ 'panel-success': column.selection, 'panel-danger': !column.selection }">
-            <div class="panel-heading">
+      <div class="local-columns-container">
+        
+          <div class="local-column-header-data" :class="{ 'vd-text-success': column.selection, 'vd-text-danger': !column.selection }">
               <p v-if="column.selection">{{ column.selection.name }}</p>
               <p v-else>{{ text[lang].chooseColumn }}</p>
-            </div>
-            <div class="panel-body">
+          </div>
+          
+          <div class="local-column-select-content">
+              <div class="local-column-select-header">
+                {{ text[lang].columnData }} <i>"{{ column.name }}"</i>
+              </div>
               <multiselect
                 :id="index"
                 v-model="column.selection"
@@ -27,33 +30,22 @@
                 :allow-empty="false"
                 @select="onSelectChange"
               ></multiselect>
-            </div>
           </div>
-        </div>
-        <div class="col-md-6">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              {{ text[lang].columnData }} <i>"{{ column.name }}"</i>
-            </div>
-            <div class="panel-body">
-              <div class="table-responsive">
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th class="text-center">{{ column.name }}</th>
-                    </tr>
-                  </thead>
+          
+          <div class="local-column-table">
+            <div class="table-responsive">
+                <table class="table table-bordered vd-table">
                   <tbody>
                     <tr v-for="data in column.displayedData">
                       <td>{{ data }}</td>
                     </tr>
                   </tbody>
                 </table>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
+          
+        </div>
+        
     </div>
     <div class="text-right" v-if="showValidateButton">
       <button @click="validate" id="validate-columns" class="btn btn-primary">{{ text[lang].submit }}</button>
