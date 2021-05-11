@@ -13,7 +13,7 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs"
   },
   "dependencies": {
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "vue": "^2.3.3",
     "vue-multiselect": "next",
     "vue2-simplert": "^0.5.4",
